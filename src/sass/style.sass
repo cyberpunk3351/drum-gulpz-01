@@ -1,0 +1,31 @@
+$default-font: latoregular
+$montserrat: Montserrat-Black
+
+body
+  background-color: bisque
+  display: flex
+  flex-direction: column
+  font-family: $default-font
+
+@mixin font($font_name, $file_name, $weight, $style)
+
+  @font-face
+    font-family: $font_name
+    font-display: swap
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+    font-weight: #{$weight}
+    font-style: #{$style}
+
+@import  "preloader.sass"
+@import  "fonts.scss"
+
+div
+  background: url("../img/image.jpg") 0 0 no-repeat
+
+img
+  max-width: 100%
+  max-height: auto
+
+h1, h2, h3, h4, h5, h6
+  font-family: $montserrat
+  margin: 0
